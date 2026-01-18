@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "certifications": "Certifications",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Vorluno",
+    "title": "Full Stack Developer",
+    "subtitle": "Creating exceptional digital experiences with modern technologies",
+    "available": "Available for projects",
+    "cta": {
+      "contact": "Contact Me",
+      "projects": "View Projects"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "location": "Panama",
+    "bio": "Full Stack Developer passionate about creating efficient and scalable solutions. Specialized in .NET, React and modern architectures.",
+    "intro": "My focus is on writing clean, maintainable and scalable code, applying industry best practices such as Clean Architecture and CQRS.",
+    "passion": "I'm passionate about learning new technologies and applying them in real projects that generate value. From modern web applications to robust backend systems, I enjoy every stage of development.",
+    "approach": "I work on both freelance and personal projects, always seeking to exceed client expectations and deliver high-quality solutions that truly solve problems."
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Some of my recent work",
+    "viewProject": "View Project",
+    "viewCode": "View Code"
+  },
+  "certifications": {
+    "title": "Certifications and Studies",
+    "subtitle": "Continuous learning and professional development"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies I work with",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Databases",
+    "devops": "DevOps",
+    "tools": "Tools"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a project in mind? Let's talk!",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent!",
+      "error": "Error sending"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "built": "Built with Next.js and Tailwind CSS"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca",
+    "projects": "Proyectos",
+    "certifications": "Certificaciones",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Vorluno",
+    "title": "Desarrollador Full Stack",
+    "subtitle": "Creando experiencias digitales excepcionales con tecnologías modernas",
+    "available": "Disponible para proyectos",
+    "cta": {
+      "contact": "Contáctame",
+      "projects": "Ver Proyectos"
+    }
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "location": "Panamá",
+    "bio": "Desarrollador Full Stack apasionado por crear soluciones eficientes y escalables. Especializado en .NET, React y arquitecturas modernas.",
+    "intro": "Mi enfoque se centra en escribir código limpio, mantenible y escalable, aplicando las mejores prácticas de la industria como Clean Architecture y CQRS.",
+    "passion": "Me apasiona aprender nuevas tecnologías y aplicarlas en proyectos reales que generen valor. Desde aplicaciones web modernas hasta sistemas backend robustos, disfruto cada etapa del desarrollo.",
+    "approach": "Trabajo tanto en proyectos freelance como personales, siempre buscando superar las expectativas del cliente y entregar soluciones de alta calidad que realmente resuelvan problemas."
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Algunos de mis trabajos recientes",
+    "viewProject": "Ver Proyecto",
+    "viewCode": "Ver Código"
+  },
+  "certifications": {
+    "title": "Certificaciones y Estudios",
+    "subtitle": "Formación continua y desarrollo profesional"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "subtitle": "Tecnologías con las que trabajo",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Bases de Datos",
+    "devops": "DevOps",
+    "tools": "Herramientas"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes un proyecto en mente? ¡Hablemos!",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado!",
+      "error": "Error al enviar"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "built": "Construido con Next.js y Tailwind CSS"
+  }
+}
