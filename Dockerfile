@@ -3,6 +3,12 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
+# Disable Next.js telemetry during build to save resources
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Increase Node.js memory limit for build
+ENV NODE_OPTIONS="--max-old-space-size=2048"
+
 COPY package*.json ./
 
 RUN npm ci
