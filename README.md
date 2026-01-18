@@ -52,18 +52,6 @@ npm run build
 # Start production server
 npm start
 ```
-
-### Docker
-
-```bash
-# Build and run with Docker Compose
-docker-compose up
-
-# Or build Docker image manually
-docker build -t vorluno-portfolio .
-docker run -p 3000:3000 vorluno-portfolio
-```
-
 ## Project Structure
 
 ```
@@ -145,6 +133,6 @@ MIT
 ## Author
 
 **Vorluno**
-- Email: vorluno@gmail.com
+- Email: contacto@vorluno.net
 - GitHub: [@vorluno](https://github.com/vorluno)
 - LinkedIn: [vorluno](https://linkedin.com/in/vorluno)
