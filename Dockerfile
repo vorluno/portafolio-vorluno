@@ -9,6 +9,18 @@ ENV NEXT_TELEMETRY_DISABLED=1
 # Limit Node.js memory for 1GB droplet (512MB build + 256MB overhead + 256MB OS)
 ENV NODE_OPTIONS="--max-old-space-size=512"
 
+# Accept build arguments for Next.js public env vars
+ARG NEXT_PUBLIC_SITE_URL
+ARG NEXT_PUBLIC_EMAIL
+ARG NEXT_PUBLIC_GITHUB
+ARG NEXT_PUBLIC_LINKEDIN
+
+# Make them available during build
+ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
+ENV NEXT_PUBLIC_EMAIL=$NEXT_PUBLIC_EMAIL
+ENV NEXT_PUBLIC_GITHUB=$NEXT_PUBLIC_GITHUB
+ENV NEXT_PUBLIC_LINKEDIN=$NEXT_PUBLIC_LINKEDIN
+
 COPY package*.json ./
 
 # Use npm ci with cache cleaning to reduce memory footprint
