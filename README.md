@@ -79,7 +79,7 @@ Create a `.env.local` file based on `.env.example`:
 
 ```env
 NEXT_PUBLIC_SITE_URL=https://vorluno.dev
-NEXT_PUBLIC_EMAIL=vorluno@gmail.com
+NEXT_PUBLIC_EMAIL=contacto@vorluno.dev
 NEXT_PUBLIC_GITHUB=https://github.com/vorluno
 NEXT_PUBLIC_LINKEDIN=https://linkedin.com/in/vorluno
 ```
@@ -133,6 +133,6 @@ MIT
 ## Author
 
 **Vorluno**
-- Email: contacto@vorluno.net
+- Email: contacto@vorluno.dev
 - GitHub: [@vorluno](https://github.com/vorluno)
 - LinkedIn: [vorluno](https://linkedin.com/in/vorluno)
