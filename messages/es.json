@@ -29,6 +29,10 @@
   "projects": {
     "title": "Proyectos",
     "subtitle": "Algunos de mis trabajos recientes",
+    "freelanceTitle": "Proyecto Freelance",
+    "personalTitle": "Proyectos Personales",
+    "featured": "Destacado",
+    "moreLabel": "más",
     "viewProject": "Ver Proyecto",
     "viewCode": "Ver Código"
   },
@@ -61,5 +65,45 @@
   "footer": {
     "rights": "Todos los derechos reservados",
     "built": "Construido con Next.js y Tailwind CSS"
+  },
+  "projectsData": {
+    "clauFormulario": {
+      "title": "Formulario CLAU - Trabajo Freelance",
+      "description": "Sistema de formularios en producción para empresa CLAU",
+      "longDescription": "Proyecto freelance en producción utilizado por la empresa CLAU. Stack moderno con ASP.NET Core 9 backend, React 18 + Vite frontend, containerizado con Docker y CapRover ready. Integración con Brevo para gestión de emails.",
+      "galleryAlt1": "Acuse de recibo para cliente",
+      "galleryTitle1": "Acuse de Recibo",
+      "galleryDesc1": "Confirmación instantánea enviada al cliente después de enviar el formulario. Muestra que su mensaje fue recibido exitosamente y proporciona un número de referencia. Email transaccional enviado vía Brevo con plantilla HTML personalizada.",
+      "galleryAlt2": "Email de notificación para administrador",
+      "galleryTitle2": "Notificación de Lead",
+      "galleryDesc2": "Email de notificación enviado al equipo de CLAU con todos los datos del contacto. Incluye información estructurada del lead, timestamp y opción de integración con Google Sheets para tracking automático de leads."
+    },
+    "menuDigital": {
+      "title": "VOR-MENU - Menú Digital PWA",
+      "description": "Progressive Web App para menús de restaurantes",
+      "longDescription": "PWA moderna para visualización de menús digitales con gestión de productos, categorías y disponibilidad en tiempo real. Incluye panel de administración completo con autenticación, CRUD de categorías y productos, y soporte bilingüe.",
+      "galleryAlt1": "Modo claro del menú",
+      "galleryTitle1": "Modo Claro",
+      "galleryDesc1": "Tema claro del menú digital, perfecto para ambientes bien iluminados. Diseño limpio y profesional con excelente contraste que facilita la lectura de nombres de productos y precios. Ideal para uso durante el día o en restaurantes con buena iluminación.",
+      "galleryAlt2": "Modo oscuro del menú",
+      "galleryTitle2": "Modo Oscuro",
+      "galleryDesc2": "Tema oscuro del menú digital, ideal para ambientes con poca luz. Reduce la fatiga visual en condiciones de baja luminosidad, perfecto para bares o restaurantes con ambiente tenue. Los colores se ajustan automáticamente manteniendo la legibilidad y el diseño elegante."
+    },
+    "formularioVorluno": {
+      "title": "Vorluno Contact Form",
+      "description": "Formulario de contacto moderno y listo para producción",
+      "longDescription": "Formulario de contacto enterprise-grade con React frontend y ASP.NET Core backend. Optimizado para deployment en CapRover con Docker, incluye notificaciones por email vía Brevo e integración opcional con Google Sheets.",
+      "galleryAlt1": "Acuse de recibo Vorluno",
+      "galleryTitle1": "Acuse de Recibo",
+      "galleryDesc1": "Email de confirmación automático enviado al usuario después de completar el formulario. Incluye número de referencia único y confirmación de que su mensaje fue recibido. Template HTML personalizado enviado vía Brevo con diseño consistente con la marca.",
+      "galleryAlt2": "Notificación de lead Vorluno",
+      "galleryTitle2": "Notificación de Lead",
+      "galleryDesc2": "Email de notificación enviado al administrador con información completa del contacto. Incluye todos los datos del formulario estructurados, timestamp y metadatos. Opcionalmente se puede integrar con Google Sheets para tracking automático de todos los leads."
+    },
+    "sistemaPlanilla": {
+      "title": "Vorluno Planilla - Sistema de Nómina",
+      "description": "Sistema integral de gestión de nómina empresarial",
+      "longDescription": "Sistema completo para gestión de nómina con arquitectura limpia, procesamiento de pagos, reportes y administración de empleados. Implementa CQRS y Clean Architecture para máxima mantenibilidad."
+    }
   }
 }

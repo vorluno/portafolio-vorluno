@@ -122,7 +122,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
             {project.featured && (
               <div className="absolute top-2 right-2 bg-gradient-primary text-white text-xs px-3 py-1 rounded-full z-20">
-                Featured
+                {t('featured')}
               </div>
             )}
           </div>
@@ -146,14 +146,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             ))}
             {project.technologies.length > 3 && (
               <span className="px-3 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400">
-                +{project.technologies.length - 3} more
+                +{project.technologies.length - 3} {t('moreLabel')}
               </span>
             )}
           </div>
 
           <div className="flex gap-3">
             <Button variant="primary" size="sm" className="flex-1" onClick={handleViewProject}>
-              {project.demo ? 'View Project' : t('viewProject')}
+              {t('viewProject')}
             </Button>
             {project.github && (
               <Button variant="outline" size="sm" className="flex-1" onClick={handleViewCode}>

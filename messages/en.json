@@ -29,6 +29,10 @@
   "projects": {
     "title": "Projects",
     "subtitle": "Some of my recent work",
+    "freelanceTitle": "Freelance Project",
+    "personalTitle": "Personal Projects",
+    "featured": "Featured",
+    "moreLabel": "more",
     "viewProject": "View Project",
     "viewCode": "View Code"
   },
@@ -61,5 +65,45 @@
   "footer": {
     "rights": "All rights reserved",
     "built": "Built with Next.js and Tailwind CSS"
+  },
+  "projectsData": {
+    "clauFormulario": {
+      "title": "CLAU Form - Freelance Project",
+      "description": "Production form system for CLAU company",
+      "longDescription": "Freelance project in production used by CLAU company. Modern stack with ASP.NET Core 9 backend, React 18 + Vite frontend, containerized with Docker and CapRover ready. Integration with Brevo for email management.",
+      "galleryAlt1": "Client receipt acknowledgment",
+      "galleryTitle1": "Receipt Acknowledgment",
+      "galleryDesc1": "Instant confirmation sent to the client after submitting the form. Shows that their message was successfully received and provides a reference number. Transactional email sent via Brevo with custom HTML template.",
+      "galleryAlt2": "Admin notification email",
+      "galleryTitle2": "Lead Notification",
+      "galleryDesc2": "Notification email sent to the CLAU team with all contact data. Includes structured lead information, timestamp and option for Google Sheets integration for automatic lead tracking."
+    },
+    "menuDigital": {
+      "title": "VOR-MENU - Digital Menu PWA",
+      "description": "Progressive Web App for restaurant menus",
+      "longDescription": "Modern PWA for digital menu visualization with product management, categories and real-time availability. Includes complete admin panel with authentication, CRUD for categories and products, and bilingual support.",
+      "galleryAlt1": "Light mode menu",
+      "galleryTitle1": "Light Mode",
+      "galleryDesc1": "Light theme of the digital menu, perfect for well-lit environments. Clean and professional design with excellent contrast that makes product names and prices easy to read. Ideal for daytime use or well-lit restaurants.",
+      "galleryAlt2": "Dark mode menu",
+      "galleryTitle2": "Dark Mode",
+      "galleryDesc2": "Dark theme of the digital menu, ideal for low-light environments. Reduces eye strain in low-light conditions, perfect for bars or restaurants with dim ambiance. Colors automatically adjust while maintaining readability and elegant design."
+    },
+    "formularioVorluno": {
+      "title": "Vorluno Contact Form",
+      "description": "Modern production-ready contact form",
+      "longDescription": "Enterprise-grade contact form with React frontend and ASP.NET Core backend. Optimized for CapRover deployment with Docker, includes email notifications via Brevo and optional Google Sheets integration.",
+      "galleryAlt1": "Vorluno receipt acknowledgment",
+      "galleryTitle1": "Receipt Acknowledgment",
+      "galleryDesc1": "Automatic confirmation email sent to the user after completing the form. Includes unique reference number and confirmation that their message was received. Custom HTML template sent via Brevo with brand-consistent design.",
+      "galleryAlt2": "Vorluno lead notification",
+      "galleryTitle2": "Lead Notification",
+      "galleryDesc2": "Notification email sent to the administrator with complete contact information. Includes all structured form data, timestamp and metadata. Optionally integrates with Google Sheets for automatic tracking of all leads."
+    },
+    "sistemaPlanilla": {
+      "title": "Vorluno Planilla - Payroll System",
+      "description": "Comprehensive enterprise payroll management system",
+      "longDescription": "Complete payroll management system with clean architecture, payment processing, reports and employee administration. Implements CQRS and Clean Architecture for maximum maintainability."
+    }
   }
 }

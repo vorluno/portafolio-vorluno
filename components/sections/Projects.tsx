@@ -40,7 +40,7 @@ export default function Projects() {
                 variants={fadeInUp}
                 className="text-3xl md:text-4xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
               >
-                Freelance Project
+                {t('freelanceTitle')}
               </motion.h3>
               <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
                 {freelanceProjects.map((project) => (
@@ -57,7 +57,7 @@ export default function Projects() {
                 variants={fadeInUp}
                 className="text-3xl md:text-4xl font-bold mb-8 text-center bg-gradient-primary bg-clip-text text-transparent"
               >
-                Personal Projects
+                {t('personalTitle')}
               </motion.h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                 {personalProjects.map((project) => (
