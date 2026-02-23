@@ -49,6 +49,7 @@ export default function GeometricDecor({
   }
 
   /* ── Manga speed lines from top-right corner ─────────── */
+  const r4 = (n: number) => Math.round(n * 10000) / 10000;
   const speedLines: React.ReactNode[] = [];
   if (isHero) {
     const ox = W + 60;
@@ -63,8 +64,8 @@ export default function GeometricDecor({
         <line
           key={`sl${i}`}
           x1={ox} y1={oy}
-          x2={ox + Math.cos(angle) * len}
-          y2={oy + Math.sin(angle) * len}
+          x2={r4(ox + Math.cos(angle) * len)}
+          y2={r4(oy + Math.sin(angle) * len)}
           stroke="white"
           strokeWidth={sw}
           opacity={op}

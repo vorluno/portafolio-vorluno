@@ -1,33 +1,94 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import SectionWrapper from '@/components/ui/SectionWrapper';
-import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
+import GeometricDecor from '@/components/ui/GeometricDecor';
 import { socialLinks } from '@/lib/data/social';
 import { motion } from 'framer-motion';
 import { staggerContainer, fadeInUp } from '@/lib/utils/animations';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+
+const inputClass = [
+  'w-full px-4 py-2.5 font-mono text-sm',
+  'bg-[rgba(2,8,23,0.7)] text-slate-200',
+  'border border-white/10 rounded-none',
+  'focus:outline-none focus:border-blue-500/60 focus:ring-1 focus:ring-blue-500/30',
+  'placeholder:text-slate-600',
+  'transition-colors',
+].join(' ');
+
+const MANGA_CARD: React.CSSProperties = {
+  background: 'rgba(2,8,23,0.88)',
+  border: '2px solid rgba(255,255,255,0.10)',
+  boxShadow: 'inset 0 0 0 1px rgba(37,99,235,0.25), 0 4px 24px rgba(0,0,0,0.4)',
+};
 
 export default function Contact() {
   const t = useTranslations('contact');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setStatus('idle');
 
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (res.ok) {
+        setStatus('success');
+        setName('');
+        setEmail('');
+        setMessage('');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    } finally {
       setIsSubmitting(false);
-      setStatus('success');
-      setTimeout(() => setStatus('idle'), 3000);
-    }, 2000);
+    }
   };
 
+  const infoLinks = [
+    {
+      icon: FaEnvelope,
+      label: 'Email',
+      value: socialLinks.email,
+      href: `mailto:${socialLinks.email}`,
+      ja: 'メール',
+    },
+    {
+      icon: FaGithub,
+      label: 'GitHub',
+      value: 'github.com/vorluno',
+      href: socialLinks.github,
+      ja: 'ギット',
+    },
+    {
+      icon: FaLinkedin,
+      label: 'LinkedIn',
+      value: 'José González',
+      href: socialLinks.linkedin,
+      ja: 'リンク',
+    },
+  ];
+
   return (
-    <SectionWrapper id="contact" className="py-20">
-      <div className="container mx-auto px-4">
+    <SectionWrapper id="contact" className="py-20 relative overflow-hidden">
+      <GeometricDecor variant="section" />
+
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           variants={staggerContainer}
           initial="initial"
@@ -37,6 +98,12 @@ export default function Contact() {
           <motion.h2
             variants={fadeInUp}
             className="text-4xl md:text-5xl font-bold text-center mb-4"
+            style={{
+              background: 'linear-gradient(135deg, #1E3A8A 0%, #2563EB 60%, #38BDF8 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
           >
             {t('title')}
           </motion.h2>
@@ -48,90 +115,139 @@ export default function Contact() {
             {t('subtitle')}
           </motion.p>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <motion.div variants={fadeInUp}>
-              <Card glassmorphism>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
-                      {t('form.name')}
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full px-4 py-2 rounded-lg bg-white dark:bg-dark-lighter border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900 dark:text-gray-100"
-                    />
-                  </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
 
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
-                      {t('form.email')}
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      className="w-full px-4 py-2 rounded-lg bg-white dark:bg-dark-lighter border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900 dark:text-gray-100"
-                    />
-                  </div>
+            {/* ── Form card ── */}
+            <motion.div variants={fadeInUp} className="relative p-6" style={MANGA_CARD}>
+              <div className="absolute top-2 right-3 font-mono text-[10px] text-sky-400/50 select-none">
+                お問い合わせ
+              </div>
+              <div className="w-8 h-0.5 bg-blue-500 mb-5" />
 
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
-                      {t('form.message')}
-                    </label>
-                    <textarea
-                      required
-                      rows={5}
-                      className="w-full px-4 py-2 rounded-lg bg-white dark:bg-dark-lighter border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900 dark:text-gray-100"
-                    />
-                  </div>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <div>
+                  <label className="block font-mono text-[10px] text-sky-400/80 mb-1.5 tracking-widest uppercase">
+                    {t('form.name')}
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                    className={inputClass}
+                    placeholder={t('form.namePlaceholder')}
+                  />
+                </div>
 
-                  <Button type="submit" className="w-full" disabled={isSubmitting}>
-                    {isSubmitting ? t('form.sending') : t('form.send')}
-                  </Button>
+                <div>
+                  <label className="block font-mono text-[10px] text-sky-400/80 mb-1.5 tracking-widest uppercase">
+                    {t('form.email')}
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    className={inputClass}
+                    placeholder="tu@email.com"
+                  />
+                </div>
 
-                  {status === 'success' && (
-                    <p className="text-green-600 dark:text-green-400 text-center">
-                      {t('form.success')}
-                    </p>
-                  )}
-                </form>
-              </Card>
+                <div>
+                  <label className="block font-mono text-[10px] text-sky-400/80 mb-1.5 tracking-widest uppercase">
+                    {t('form.message')}
+                  </label>
+                  <textarea
+                    required
+                    rows={5}
+                    value={message}
+                    onChange={e => setMessage(e.target.value)}
+                    className={inputClass}
+                    placeholder={t('form.messagePlaceholder')}
+                  />
+                </div>
+
+                <Button type="submit" className="w-full mt-1" disabled={isSubmitting}>
+                  {isSubmitting ? t('form.sending') : t('form.send')}
+                </Button>
+
+                {status === 'success' && (
+                  <p className="font-mono text-xs text-green-400/90 text-center">
+                    ✓ {t('form.success')}
+                  </p>
+                )}
+                {status === 'error' && (
+                  <p className="font-mono text-xs text-red-400/90 text-center">
+                    ✗ {t('form.error')}
+                  </p>
+                )}
+              </form>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="space-y-6">
-              <Card glassmorphism>
-                <h3 className="text-xl font-semibold mb-4">Email</h3>
-                <a
-                  href={`mailto:${socialLinks.email}`}
-                  className="text-primary hover:underline"
-                >
-                  {socialLinks.email}
-                </a>
-              </Card>
+            {/* ── Info + tagline ── */}
+            <motion.div variants={fadeInUp} className="flex flex-col gap-4">
 
-              <Card glassmorphism>
-                <h3 className="text-xl font-semibold mb-4">GitHub</h3>
-                <a
-                  href={socialLinks.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
+              {infoLinks.map(({ icon: Icon, label, value, href, ja }, i) => (
+                <div
+                  key={label}
+                  className="relative p-5 flex items-center gap-4"
+                  style={{
+                    background: 'rgba(2,8,23,0.88)',
+                    border: '2px solid rgba(255,255,255,0.08)',
+                    boxShadow: 'inset 0 0 0 1px rgba(37,99,235,0.18), 0 4px 20px rgba(0,0,0,0.35)',
+                  }}
                 >
-                  {socialLinks.github}
-                </a>
-              </Card>
+                  <div className="absolute top-2 right-3 font-mono text-[9px] text-sky-400/35 select-none">
+                    {ja} [{String(i + 1).padStart(2, '0')}]
+                  </div>
 
-              <Card glassmorphism>
-                <h3 className="text-xl font-semibold mb-4">LinkedIn</h3>
-                <a
-                  href={socialLinks.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
+                  <div
+                    className="flex items-center justify-center w-10 h-10 shrink-0"
+                    style={{
+                      background: 'rgba(37,99,235,0.15)',
+                      border: '1px solid rgba(37,99,235,0.4)',
+                    }}
+                  >
+                    <Icon className="text-sky-400 text-lg" />
+                  </div>
+
+                  <div>
+                    <div className="font-mono text-[10px] text-sky-400/70 tracking-widest uppercase mb-0.5">
+                      {label}
+                    </div>
+                    <a
+                      href={href}
+                      target={label !== 'Email' ? '_blank' : undefined}
+                      rel={label !== 'Email' ? 'noopener noreferrer' : undefined}
+                      className="text-sm text-slate-300/80 hover:text-sky-400 transition-colors font-mono"
+                    >
+                      {value}
+                    </a>
+                  </div>
+                </div>
+              ))}
+
+              {/* Tagline manga card */}
+              <div
+                className="relative p-5 flex-1 flex flex-col justify-center"
+                style={{
+                  background: 'rgba(2,8,23,0.88)',
+                  border: '2px solid rgba(37,99,235,0.3)',
+                  boxShadow: 'inset 0 0 0 1px rgba(37,99,235,0.12)',
+                }}
+              >
+                <div className="absolute top-2 right-3 font-mono text-[10px] text-sky-400/50 select-none">
+                  連絡
+                </div>
+                <div className="w-6 h-0.5 bg-blue-500 mb-3" />
+                <p
+                  className="font-mono text-[11px] text-slate-400/80 leading-relaxed"
+                  style={{ borderLeft: '2px solid rgba(37,99,235,0.45)', paddingLeft: '10px' }}
                 >
-                  {socialLinks.linkedin}
-                </a>
-              </Card>
+                  {t('tagline')}
+                </p>
+              </div>
+
             </motion.div>
           </div>
         </motion.div>

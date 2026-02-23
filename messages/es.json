@@ -11,6 +11,7 @@
     "greeting": "Hola, soy",
     "name": "José",
     "title": "Desarrollador Full Stack",
+    "typewriter": ["Desarrollador Full Stack", "Escritor", "Melómano", "Gamer", "Otaku"],
     "subtitle": "Creando experiencias digitales excepcionales con tecnologías modernas",
     "available": "Disponible para proyectos",
     "cta": {
@@ -36,9 +37,24 @@
     "viewProject": "Ver Proyecto",
     "viewCode": "Ver Código"
   },
+  "projectModal": {
+    "viewRepo": "Ver Repositorio",
+    "viewDemo": "Ver Demo en Vivo",
+    "technologies": "Tecnologías",
+    "features": "Características",
+    "gallery": "Galería",
+    "documentation": "Documentación"
+  },
   "certifications": {
     "title": "Certificaciones y Estudios",
-    "subtitle": "Formación continua y desarrollo profesional"
+    "subtitle": "Formación continua y desarrollo profesional",
+    "issuer": "Certificación Profesional",
+    "items": {
+      "fundamentals": "Fundamentos de Programación",
+      "spreadsheetBasic": "Hoja de Cálculo Básica",
+      "spreadsheetMid": "Hoja de Cálculo Intermedio",
+      "diploma": "Diploma"
+    }
   },
   "skills": {
     "title": "Habilidades",
@@ -52,10 +68,13 @@
   "contact": {
     "title": "Contacto",
     "subtitle": "¿Tienes un proyecto en mente? ¡Hablemos!",
+    "tagline": "Disponible para proyectos freelance y oportunidades de trabajo. Respondo en menos de 24h.",
     "form": {
       "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
       "email": "Correo Electrónico",
       "message": "Mensaje",
+      "messagePlaceholder": "Tu mensaje...",
       "send": "Enviar Mensaje",
       "sending": "Enviando...",
       "success": "¡Mensaje enviado!",
@@ -65,16 +84,33 @@
   "universe": {
     "title": "Mi Universo",
     "subtitle": "Las cosas que me hacen ser yo",
-    "anime": { "title": "Anime & Manga" },
-    "series": { "title": "Series" },
-    "music": { "title": "Música" },
-    "gaming": { "title": "Gaming" }
+    "anime": {
+      "title": "Anime & Manga",
+      "text": "Me gusta en general el mundo del anime y manga, he leído novelas ligeras de mis animes favoritos, me encanta ver animes de romance y de acción, tengo mis favoritos y muchos otros que me encantan. Mi personaje favorito en este momento es Choso de Jujutsu Kaisen."
+    },
+    "series": {
+      "title": "Series",
+      "text": "Me gustan muchos tipos de series, pero las de acción, superhéroes o supervivencia son mis favoritas. Algunas con suspenso y dramas sangrientos como You o The Boys son series que disfruto mucho. Un gusto culposo que agarré fueron los kdramas — hay kdramas románticos tan lindos que se te derrite el corazón, y muchos otros que muestran caras muy fuertes de la sociedad. También hay de acción; uno que recomiendo es Vagabond."
+    },
+    "music": {
+      "title": "Música",
+      "text": "En temas musicales tengo un gusto demasiado variado: puedo disfrutar cualquier tipo de canción en español — reggaetón, salsa, merengue, vallenato, típico, bachata, rock... Pero también me encanta el pop inglés, el pop japonés, los openings de anime, el kpop con muchas bandas e idols. Yendo más profundo: rock y metalcore, Luis Miguel, boleros... Hay demasiado que podría mencionar, pero esto es lo que normalmente escucho."
+    },
+    "gaming": {
+      "title": "Gaming",
+      "text": "Soy fan de los videojuegos arcade y RPG — me encanta sumergirme en sus mundos sin seguir un camino específico. Juegos como Octopath Traveler, Dark Souls, Celeste, Silksong, Hades, Stardew Valley, Elden Ring, Sekiro. En lo más popular: Genshin Impact, Honkai Star Rail, League of Legends, osu!, Minecraft, Fortnite. Y los más personales: Uncharted, The Walking Dead, God of War."
+    }
   },
   "footer": {
     "rights": "Todos los derechos reservados",
     "built": "Construido con Next.js y Tailwind CSS"
   },
   "projectsData": {
+    "sistemaPlanilla": {
+      "title": "Planilla — SaaS de Nómina para Panamá",
+      "description": "Sistema de nómina empresarial multi-tenant con cumplimiento Ley 462 (CSS), SE, ISR y regulaciones laborales en Panamá.",
+      "longDescription": "Sistema de nómina empresarial multi-tenant para empresas en Panamá, con cumplimiento de la Ley 462 (CSS), Seguro Educativo, ISR y regulaciones laborales locales. Clean Architecture, suscripciones con Stripe y roles por tenant. Disponible en pagly.clau.com.pa (landing) y app.pagly.clau.com.pa (aplicación)."
+    },
     "clauFormulario": {
       "title": "Formulario CLAU - Trabajo Freelance",
       "description": "Sistema de formularios en producción para empresa CLAU",
@@ -107,11 +143,6 @@
       "galleryAlt2": "Notificación de lead Vorluno",
       "galleryTitle2": "Notificación de Lead",
       "galleryDesc2": "Email de notificación enviado al administrador con información completa del contacto. Incluye todos los datos del formulario estructurados, timestamp y metadatos. Opcionalmente se puede integrar con Google Sheets para tracking automático de todos los leads."
-    },
-    "sistemaPlanilla": {
-      "title": "Vorluno Planilla - Sistema de Nómina",
-      "description": "Sistema integral de gestión de nómina empresarial",
-      "longDescription": "Sistema completo para gestión de nómina con arquitectura limpia, procesamiento de pagos, reportes y administración de empleados. Implementa CQRS y Clean Architecture para máxima mantenibilidad."
     }
   }
 }

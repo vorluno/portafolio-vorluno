@@ -147,7 +147,7 @@ export default function Universe() {
             <BentoCard
               title={t('anime.title')}
               jaTitle="アニメ"
-              text="Me gusta en general el mundo del anime y manga, he leído has novelas ligeras de mis animes favoritos, me encanta ver animes de romance y de acción, tengo mis favoritos y muchos otros que me encantan, mi personaje favorito en este momento es choso de jujutsu kaisen."
+              text={t('anime.text')}
               tags={['JJK', 'Re:Zero', 'Mushoku Tensei', 'Choso', 'Isekai', 'Romance']}
               colSpan={2}
               delay={0.1}
@@ -155,7 +155,7 @@ export default function Universe() {
             <BentoCard
               title={t('series.title')}
               jaTitle="シリーズ"
-              text="Me gustan muchos tipos de series, pero las series de acción, de superheroes o supervivencia son mis favoritas, algunas qué tienen ese suspenso y dramas sangrientos como You o The boys, diría que son series que disfruto. Un gusto culposo que agarre fueron los kdramas, hay kdramas románticos tan lindos que se te derrite el corazón y muchos otros que muestran caras de la sociedad muy fuertes, también hay de acción, uno que recomiendo es vagabond."
+              text={t('series.text')}
               tags={['The Boys', 'You', 'Vagabond', 'Kdramas', 'Superhéroes']}
               colSpan={2}
               delay={0.2}
@@ -165,7 +165,7 @@ export default function Universe() {
             <BentoCard
               title={t('music.title')}
               jaTitle="音楽"
-              text="En temas musicales tengo un gusto demasiado variado, puedo disfrutar cualquier tipo de canción en español, reggaetón, salsa, merengue, vallenato, típico, bachata, rock... Pero también me encanta el pop inglés, el pop japonés, los openings de anime dirían, el kpop me gustan muchas bandas y idols. También diendo más profundo diría que el rock y metalcore, Luis Miguel, boleros... Hay demasiado que podría mencionar, pero esto es lo que normalmente escucho."
+              text={t('music.text')}
               tags={['Arctic Monkeys', 'Bachata', 'Metalcore', 'K-Pop', 'J-Pop', 'Luis Miguel']}
               colSpan={3}
               delay={0.3}
@@ -174,7 +174,7 @@ export default function Universe() {
             <BentoCard
               title={t('gaming.title')}
               jaTitle="ゲーム"
-              text="Soy fan de los videojuegos arcade y rpg, me encanta sumergirme en sus mundos, no llevar un camino específico, juegos como octopath traveler, dark souls, Celeste, silksong, hades, stardew valley, elden ring, sekiro. Aunque a algo más popular diría genshin impact, honkai star rail, league of legends, osu, Minecraft, fortnite y juegos más personales, uncharted, the walking dead, god of war."
+              text={t('gaming.text')}
               tags={['Elden Ring', 'Genshin', 'Celeste', 'Uncharted', 'Dark Souls']}
               colSpan={1}
               delay={0.4}

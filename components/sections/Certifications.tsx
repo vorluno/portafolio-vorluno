@@ -8,30 +8,26 @@ import { motion } from 'framer-motion';
 import { staggerContainer, fadeInUp } from '@/lib/utils/animations';
 import { useState } from 'react';
 
-const certifications = [
+const CERT_DATA = [
   {
-    name: 'Fundamentos de Programación',
+    key: 'fundamentals',
     file: '/images/estudios/certificado_FUNDAMENTOS_DE_PROGRAMACI_N.pdf',
     preview: '/images/estudios/preview-fundamentos-programacion.png',
-    issuer: 'Certificación Profesional',
   },
   {
-    name: 'Hoja de Cálculo Básica',
+    key: 'spreadsheetBasic',
     file: '/images/estudios/certificado_HOJA_DE_CALCULO_B_SICA.pdf',
     preview: '/images/estudios/preview-hoja-calculo-basica.png',
-    issuer: 'Certificación Profesional',
   },
   {
-    name: 'Hoja de Cálculo Intermedio',
+    key: 'spreadsheetMid',
     file: '/images/estudios/certificado_HOJA_DE_CALCULO_INTERMEDIO (1).pdf',
     preview: '/images/estudios/preview-hoja-calculo-intermedio.png',
-    issuer: 'Certificación Profesional',
   },
   {
-    name: 'Diploma',
+    key: 'diploma',
     file: '/images/estudios/DIPLOMA.pdf',
     preview: '/images/estudios/preview-diploma.png',
-    issuer: 'Certificación Profesional',
   },
 ];
 
@@ -39,12 +35,16 @@ export default function Certifications() {
   const t = useTranslations('certifications');
   const [isPaused, setIsPaused] = useState(false);
 
-  // Duplicate certifications for infinite loop
-  const duplicatedCertifications = [...certifications, ...certifications];
+  const certifications = CERT_DATA.map((c) => ({
+    ...c,
+    name: t(`items.${c.key}`),
+    issuer: t('issuer'),
+  }));
+
+  const duplicated = [...certifications, ...certifications];
 
   return (
     <SectionWrapper id="certifications" className="py-20 bg-light-base dark:bg-dark-base relative overflow-hidden">
-      {/* Gradient Background Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -68,12 +68,11 @@ export default function Certifications() {
             {t('subtitle')}
           </motion.p>
 
-          {/* Infinite Horizontal Carousel */}
           <motion.div variants={fadeInUp} className="w-full">
             <InfiniteCarousel isPaused={isPaused} gap={32}>
-              {duplicatedCertifications.map((cert, index) => (
+              {duplicated.map((cert, index) => (
                 <CertificationCard
-                  key={`${cert.name}-${index}`}
+                  key={`${cert.key}-${index}`}
                   name={cert.name}
                   preview={cert.preview}
                   file={cert.file}

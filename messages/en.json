@@ -11,6 +11,7 @@
     "greeting": "Hi, I'm",
     "name": "José",
     "title": "Full Stack Developer",
+    "typewriter": ["Full Stack Developer", "Writer", "Music Lover", "Gamer", "Otaku"],
     "subtitle": "Creating exceptional digital experiences with modern technologies",
     "available": "Available for projects",
     "cta": {
@@ -36,9 +37,24 @@
     "viewProject": "View Project",
     "viewCode": "View Code"
   },
+  "projectModal": {
+    "viewRepo": "View Repository",
+    "viewDemo": "View Live Demo",
+    "technologies": "Technologies",
+    "features": "Features",
+    "gallery": "Gallery",
+    "documentation": "Documentation"
+  },
   "certifications": {
     "title": "Certifications and Studies",
-    "subtitle": "Continuous learning and professional development"
+    "subtitle": "Continuous learning and professional development",
+    "issuer": "Professional Certification",
+    "items": {
+      "fundamentals": "Programming Fundamentals",
+      "spreadsheetBasic": "Basic Spreadsheet",
+      "spreadsheetMid": "Intermediate Spreadsheet",
+      "diploma": "Diploma"
+    }
   },
   "skills": {
     "title": "Skills",
@@ -52,10 +68,13 @@
   "contact": {
     "title": "Contact",
     "subtitle": "Have a project in mind? Let's talk!",
+    "tagline": "Available for freelance projects and job opportunities. I respond in under 24h.",
     "form": {
       "name": "Name",
+      "namePlaceholder": "Your name",
       "email": "Email",
       "message": "Message",
+      "messagePlaceholder": "Your message...",
       "send": "Send Message",
       "sending": "Sending...",
       "success": "Message sent!",
@@ -65,16 +84,33 @@
   "universe": {
     "title": "My Universe",
     "subtitle": "The things that make me who I am",
-    "anime": { "title": "Anime & Manga" },
-    "series": { "title": "Series" },
-    "music": { "title": "Music" },
-    "gaming": { "title": "Gaming" }
+    "anime": {
+      "title": "Anime & Manga",
+      "text": "I generally love the world of anime and manga — I've read light novels from my favorite series, I love watching romance and action anime, and I have my all-time favorites plus many others I adore. My favorite character right now is Choso from Jujutsu Kaisen."
+    },
+    "series": {
+      "title": "Series",
+      "text": "I enjoy many types of series, but action, superhero or survival shows are my favorites. Some with suspense and bloody drama like You or The Boys are shows I really enjoy. A guilty pleasure I picked up were kdramas — there are romantic kdramas so beautiful they melt your heart, and others that show very powerful sides of society. There are also action ones; one I highly recommend is Vagabond."
+    },
+    "music": {
+      "title": "Music",
+      "text": "Musically I have an incredibly varied taste — I can enjoy any type of Spanish song: reggaeton, salsa, merengue, vallenato, típico, bachata, rock... But I also love English pop, Japanese pop, anime openings, and K-pop with many bands and idols. Going deeper: rock and metalcore, Luis Miguel, boleros... There's too much I could mention, but this is what I normally listen to."
+    },
+    "gaming": {
+      "title": "Gaming",
+      "text": "I'm a fan of arcade and RPG games — I love immersing myself in their worlds without following a specific path. Games like Octopath Traveler, Dark Souls, Celeste, Silksong, Hades, Stardew Valley, Elden Ring, Sekiro. On the popular side: Genshin Impact, Honkai Star Rail, League of Legends, osu!, Minecraft, Fortnite. And personal favorites: Uncharted, The Walking Dead, God of War."
+    }
   },
   "footer": {
     "rights": "All rights reserved",
     "built": "Built with Next.js and Tailwind CSS"
   },
   "projectsData": {
+    "sistemaPlanilla": {
+      "title": "Planilla — Payroll SaaS for Panama",
+      "description": "Multi-tenant enterprise payroll system with Law 462 (CSS), SE, ISR compliance and Panamanian labor regulations.",
+      "longDescription": "Multi-tenant enterprise payroll system for companies in Panama, with compliance for Law 462 (CSS), Educational Insurance, Income Tax and local labor regulations. Clean Architecture, Stripe subscriptions and per-tenant roles. Available at pagly.clau.com.pa (landing) and app.pagly.clau.com.pa (app)."
+    },
     "clauFormulario": {
       "title": "CLAU Form - Freelance Project",
       "description": "Production form system for CLAU company",
@@ -107,11 +143,6 @@
       "galleryAlt2": "Vorluno lead notification",
       "galleryTitle2": "Lead Notification",
       "galleryDesc2": "Notification email sent to the administrator with complete contact information. Includes all structured form data, timestamp and metadata. Optionally integrates with Google Sheets for automatic tracking of all leads."
-    },
-    "sistemaPlanilla": {
-      "title": "Vorluno Planilla - Payroll System",
-      "description": "Comprehensive enterprise payroll management system",
-      "longDescription": "Complete payroll management system with clean architecture, payment processing, reports and employee administration. Implements CQRS and Clean Architecture for maximum maintainability."
     }
   }
 }

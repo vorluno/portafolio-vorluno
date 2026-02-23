@@ -11,17 +11,9 @@ import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils/animations';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { HiDocumentText } from 'react-icons/hi';
 
-const TYPEWRITER_TEXTS = [
-  'Desarrollador Full Stack',
-  'Otaku empedernido 🌀 ',
-  'Gamer | Uncharted 4 fan',
-  'Arctic Monkeys forever 🎸',
-  'Seguidor de Gojo Satoru',
-  'Amante del anime y lo melancólico',
-];
-
 export default function Hero() {
   const t = useTranslations('hero');
+  const TYPEWRITER_TEXTS = t.raw('typewriter') as string[];
 
   return (
     <section

@@ -64,6 +64,8 @@ const panels: Panel[] = [
   { src: '6d54f757d1b57004694e436d2d4bb245.jpg',           area: 'w',               num: 23 },
 ];
 
+const r4 = (n: number) => Math.round(n * 10000) / 10000;
+
 function SpeedLines() {
   return (
     <svg
@@ -79,8 +81,8 @@ function SpeedLines() {
             key={i}
             x1={100}
             y1={100}
-            x2={100 + Math.cos(angle) * 180}
-            y2={100 + Math.sin(angle) * 180}
+            x2={r4(100 + Math.cos(angle) * 180)}
+            y2={r4(100 + Math.sin(angle) * 180)}
             stroke="white"
             strokeWidth={i % 5 === 0 ? '1.5' : '0.5'}
             opacity={0.08 + (i % 3) * 0.02}

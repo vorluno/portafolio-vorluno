@@ -5,6 +5,7 @@ import { Project } from '@/lib/types';
 import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 import { useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface ProjectDetailModalProps {
   project: Project | null;
@@ -13,6 +14,7 @@ interface ProjectDetailModalProps {
 }
 
 export default function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailModalProps) {
+  const t = useTranslations('projectModal');
   // Close on ESC key
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -82,7 +84,7 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
                         className="flex items-center gap-2 px-6 py-3 bg-gradient-primary text-white rounded-lg hover:opacity-90 transition-opacity shadow-lg"
                       >
                         <FaGithub className="text-xl" />
-                        <span>View Repository</span>
+                        <span>{t('viewRepo')}</span>
                       </a>
                     )}
                     {project.demo && (
@@ -93,7 +95,7 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
                         className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:opacity-90 transition-opacity shadow-lg"
                       >
                         <FaExternalLinkAlt className="text-lg" />
-                        <span>View Live Demo</span>
+                        <span>{t('viewDemo')}</span>
                       </a>
                     )}
                   </div>
@@ -102,7 +104,7 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
                 {/* Technologies */}
                 <div className="mb-8">
                   <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-                    Technologies
+                    {t('technologies')}
                   </h3>
                   <div className="flex flex-wrap gap-3">
                     {project.technologies.map((tech) => (
@@ -120,7 +122,7 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
                 {project.features && project.features.length > 0 && (
                   <div className="mb-8">
                     <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-                      Features
+                      {t('features')}
                     </h3>
                     <div className="grid md:grid-cols-2 gap-3">
                       {project.features.map((feature, index) => (
@@ -141,7 +143,7 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
                 {project.gallery && project.gallery.length > 0 && (
                   <div className="mb-8">
                     <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-                      Gallery
+                      {t('gallery')}
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                       {project.gallery.map((image, index) => (
@@ -185,7 +187,7 @@ export default function ProjectDetailModal({ project, isOpen, onClose }: Project
                 {project.readmeContent && (
                   <div className="mb-8">
                     <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-                      Documentation
+                      {t('documentation')}
                     </h3>
                     <div className="prose dark:prose-invert max-w-none">
                       <div className="whitespace-pre-line text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
