@@ -42,7 +42,7 @@ export default function Projects() {
               >
                 {t('freelanceTitle')}
               </motion.h3>
-              <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                 {freelanceProjects.map((project) => (
                   <ProjectCard key={project.id} project={project} />
                 ))}

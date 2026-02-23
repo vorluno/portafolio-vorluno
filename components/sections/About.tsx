@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import Card from '@/components/ui/Card';
+import GeometricDecor from '@/components/ui/GeometricDecor';
 import { motion } from 'framer-motion';
 import { staggerContainer, fadeInUp } from '@/lib/utils/animations';
 
@@ -10,8 +11,10 @@ export default function About() {
   const t = useTranslations('about');
 
   return (
-    <SectionWrapper id="about" className="py-20 bg-light-base dark:bg-dark-base">
-      <div className="container mx-auto px-4">
+    <SectionWrapper id="about" className="py-20 bg-light-base dark:bg-dark-base relative overflow-hidden">
+      {/* Decoración geométrica espejada para variar respecto al Hero */}
+      <GeometricDecor variant="section" flip />
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           variants={staggerContainer}
           initial="initial"

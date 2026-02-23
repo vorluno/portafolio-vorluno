@@ -4,6 +4,7 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import ParticlesBackground from '@/components/ui/ParticlesBackground';
 import '../globals.css';
 
 export const metadata = {
@@ -55,6 +56,7 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="font-sans">
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <ParticlesBackground />
           <Navbar />
           <main>{children}</main>
           <Footer />

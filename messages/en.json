@@ -62,6 +62,14 @@
       "error": "Error sending"
     }
   },
+  "universe": {
+    "title": "My Universe",
+    "subtitle": "The things that make me who I am",
+    "anime": { "title": "Anime & Manga" },
+    "series": { "title": "Series" },
+    "music": { "title": "Music" },
+    "gaming": { "title": "Gaming" }
+  },
   "footer": {
     "rights": "All rights reserved",
     "built": "Built with Next.js and Tailwind CSS"

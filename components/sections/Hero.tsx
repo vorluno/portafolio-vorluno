@@ -5,9 +5,20 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
+import TypewriterEffect from '@/components/ui/TypewriterEffect';
+import GeometricDecor from '@/components/ui/GeometricDecor';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils/animations';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { HiDocumentText } from 'react-icons/hi';
+
+const TYPEWRITER_TEXTS = [
+  'Desarrollador Full Stack',
+  'Otaku empedernido 🌀 ',
+  'Gamer | Uncharted 4 fan',
+  'Arctic Monkeys forever 🎸',
+  'Seguidor de Gojo Satoru',
+  'Amante del anime y lo melancólico',
+];
 
 export default function Hero() {
   const t = useTranslations('hero');
@@ -17,11 +28,17 @@ export default function Hero() {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
+      {/* Background gradients */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-transparent to-secondary/10" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-800/25 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-secondary/10 via-transparent to-transparent" />
+
+      {/* Decoración geométrica: grid, paralelogramos, círculos rayados, speed lines, ド */}
+      <GeometricDecor variant="hero" />
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left side — Text */}
           <motion.div
             variants={slideInLeft}
             initial="initial"
@@ -92,13 +109,21 @@ export default function Hero() {
               {t('title')}
             </motion.h2>
 
-            <motion.p
+            {/* Typewriter effect en lugar del subtitle estático */}
+            <motion.div
               variants={fadeInUp}
               transition={{ delay: 0.4 }}
-              className="text-lg text-gray-600 dark:text-gray-400 mb-6"
+              className="text-lg mb-6 h-8"
+              style={{ minHeight: '2rem' }}
             >
-              {t('subtitle')}
-            </motion.p>
+              <TypewriterEffect
+                texts={TYPEWRITER_TEXTS}
+                speed={70}
+                deleteSpeed={40}
+                pauseDuration={1800}
+                className="text-gray-600 dark:text-gray-400"
+              />
+            </motion.div>
 
             <motion.div
               variants={fadeInUp}
@@ -139,6 +164,7 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
+          {/* Right side — Foto personal con efecto Six Eyes */}
           <motion.div
             variants={slideInRight}
             initial="initial"
@@ -152,13 +178,56 @@ export default function Hero() {
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                 className="relative w-full h-full"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED] to-[#06B6D4] rounded-full blur-3xl opacity-30" />
-                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 dark:border-white/20 shadow-2xl bg-gradient-to-br from-[#1a0933] via-[#0f0520] to-[#012939]">
+                {/* Glow de fondo */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1E3A8A] to-[#2563EB] rounded-full blur-3xl opacity-40" />
+
+                {/* Anillos Six Eyes — exterior */}
+                <div
+                  className="absolute six-eyes-ring animate-glow-pulse"
+                  style={{
+                    inset: '-12px',
+                    borderWidth: '2px',
+                    borderStyle: 'solid',
+                    borderColor: 'rgba(37,99,235,0.5)',
+                    borderRadius: '50%',
+                    animationDelay: '0s',
+                  }}
+                />
+                {/* Anillo intermedio */}
+                <div
+                  className="absolute six-eyes-ring animate-glow-pulse"
+                  style={{
+                    inset: '-24px',
+                    borderWidth: '1px',
+                    borderStyle: 'solid',
+                    borderColor: 'rgba(56,189,248,0.3)',
+                    borderRadius: '50%',
+                    animationDelay: '0.8s',
+                  }}
+                />
+                {/* Anillo exterior tenue */}
+                <div
+                  className="absolute"
+                  style={{
+                    inset: '-38px',
+                    borderWidth: '1px',
+                    borderStyle: 'solid',
+                    borderColor: 'rgba(37,99,235,0.15)',
+                    borderRadius: '50%',
+                  }}
+                />
+
+                {/* Avatar circular — foto personal */}
+                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary-700/40 shadow-2xl bg-gradient-to-br from-[#020817] via-[#0F172A] to-[#020817]"
+                  style={{
+                    boxShadow: '0 0 40px rgba(37,99,235,0.3), inset 0 0 20px rgba(37,99,235,0.1)',
+                  }}
+                >
                   <Image
-                    src="/images/vorluno-icon-transparent.png"
-                    alt="Vorluno Logo"
+                    src="/images/jose_2026_campanamá03.png"
+                    alt="José González"
                     fill
-                    className="object-contain p-8 drop-shadow-2xl"
+                    className="object-cover"
                     priority
                   />
                 </div>

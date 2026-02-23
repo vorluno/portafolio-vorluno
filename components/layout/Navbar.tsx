@@ -54,7 +54,7 @@ export default function Navbar() {
             href="/"
             className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent"
           >
-            Vorluno
+            José
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">

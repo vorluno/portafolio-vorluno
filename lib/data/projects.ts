@@ -1,7 +1,102 @@
 import { Project } from '@/lib/types';
 
+// Orden de imágenes Planilla por timestamp (215934 → 220848)
+const planillaImage = (time: string) =>
+  `/images/projects/planilla/Captura de pantalla 2026-02-22 ${time}.png`;
+
 export const projects: Project[] = [
-  // PROYECTO FREELANCER
+  // PROYECTOS FREELANCER
+  {
+    id: 'planilla-saas-freelance',
+    title: 'Planilla — SaaS de Nómina para Panamá',
+    description: 'Sistema de nómina empresarial multi-tenant con cumplimiento Ley 462 (CSS), SE, ISR y regulaciones laborales en Panamá.',
+    longDescription:
+      'Sistema de nómina empresarial multi-tenant para empresas en Panamá, con cumplimiento de la Ley 462 (CSS), Seguro Educativo, ISR y regulaciones laborales locales. Clean Architecture, suscripciones con Stripe y roles por tenant. Disponible en pagly.clau.com.pa (landing) y app.pagly.clau.com.pa (aplicación).',
+    technologies: [
+      '.NET 9',
+      'ASP.NET Core Web API',
+      'Entity Framework Core',
+      'React 19',
+      'Vite',
+      'Tailwind CSS',
+      'PostgreSQL 16+',
+      'Stripe',
+      'Docker',
+      'CapRover',
+    ],
+    image: planillaImage('215934'),
+    github: 'https://github.com/vorluno/Vorluno-Planilla',
+    demo: 'https://pagly.clau.com.pa/',
+    category: 'fullstack',
+    featured: true,
+    isFreelance: true,
+    features: [
+      '🏢 Multi-tenant: varias empresas en una instancia, aislamiento de datos por tenant',
+      '💰 Nómina: cálculo CSS, SE, ISR, riesgo profesional, horas extra, adelantos, vacaciones',
+      '📋 Flujo: Draft → Calculado → Aprobado → Pagado',
+      '👥 Empleados: CRUD, departamentos, cargos, historial salarial y auditoría',
+      '💳 Suscripciones: planes Free / Starter / Professional / Enterprise con Stripe',
+      '🔐 Roles: Owner, Admin, Manager, Accountant, Employee con permisos por rol',
+      '📊 Reportes: comprobantes de pago, reportes CSS, declaraciones ISR, exportación Excel/PDF',
+      '🛡️ Filtrado por TenantId en todas las consultas y límites por plan',
+      '🔑 JWT con claims tenant_id, tenant_role y plan; middleware de tenant',
+      '📡 API REST documentada, DTOs y ActionResponse<T> tipado',
+    ],
+    gallery: [
+      { src: planillaImage('215934'), alt: 'Dashboard Planilla', title: 'Dashboard', description: 'Panel principal del SaaS de nómina con resumen por tenant.' },
+      { src: planillaImage('215958'), alt: 'Vista empresas o tenant', title: 'Empresas / Tenants', description: 'Gestión multi-tenant con aislamiento de datos.' },
+      { src: planillaImage('220030'), alt: 'Listado de empleados', title: 'Empleados', description: 'CRUD de empleados con departamentos y cargos.' },
+      { src: planillaImage('220130'), alt: 'Detalle empleado', title: 'Detalle de empleado', description: 'Historial salarial y auditoría por empleado.' },
+      { src: planillaImage('220140'), alt: 'Departamentos y cargos', title: 'Departamentos y cargos', description: 'Organización por departamentos y cargos.' },
+      { src: planillaImage('220154'), alt: 'Nómina borrador', title: 'Nómina — Borrador', description: 'Planilla en estado Draft antes del cálculo.' },
+      { src: planillaImage('220205'), alt: 'Cálculo de nómina', title: 'Cálculo de nómina', description: 'Cálculo CSS, SE, ISR y riesgo profesional.' },
+      { src: planillaImage('220210'), alt: 'Nómina calculada', title: 'Nómina calculada', description: 'Estado Calculado listo para aprobación.' },
+      { src: planillaImage('220218'), alt: 'Flujo aprobado pagado', title: 'Flujo Aprobado → Pagado', description: 'Ciclo de vida de la planilla hasta pago.' },
+      { src: planillaImage('220227'), alt: 'Horas extra y adelantos', title: 'Horas extra y adelantos', description: 'Gestión de horas extra y adelantos de salario.' },
+      { src: planillaImage('220235'), alt: 'Vacaciones', title: 'Vacaciones', description: 'Registro y cálculo de vacaciones.' },
+      { src: planillaImage('220239'), alt: 'Reportes CSS', title: 'Reportes CSS', description: 'Reportes para cumplimiento Ley 462 (CSS).' },
+      { src: planillaImage('220254'), alt: 'Declaraciones ISR', title: 'Declaraciones ISR', description: 'Declaraciones de impuesto sobre la renta.' },
+      { src: planillaImage('220304'), alt: 'Comprobantes de pago', title: 'Comprobantes de pago', description: 'Generación de comprobantes para empleados.' },
+      { src: planillaImage('220314'), alt: 'Exportación Excel PDF', title: 'Exportación Excel/PDF', description: 'Exportación según plan de suscripción.' },
+      { src: planillaImage('220319'), alt: 'Suscripciones Stripe', title: 'Suscripciones Stripe', description: 'Planes Free, Starter, Professional, Enterprise.' },
+      { src: planillaImage('220324'), alt: 'Portal de facturación', title: 'Portal de facturación', description: 'Webhooks y portal de facturación con Stripe.' },
+      { src: planillaImage('220329'), alt: 'Roles y permisos', title: 'Roles y permisos', description: 'Owner, Admin, Manager, Accountant, Employee.' },
+      { src: planillaImage('220335'), alt: 'Configuración tenant', title: 'Configuración por tenant', description: 'Ajustes y límites por plan.' },
+      { src: planillaImage('220521'), alt: 'Vista nómina', title: 'Vista de nómina', description: 'Resumen de planilla por período.' },
+      { src: planillaImage('220527'), alt: 'Detalle cálculo', title: 'Detalle de cálculo', description: 'Desglose de deducciones y devengados.' },
+      { src: planillaImage('220533'), alt: 'Empleados listado', title: 'Listado de empleados', description: 'Tabla de empleados con filtros.' },
+      { src: planillaImage('220542'), alt: 'Reportes', title: 'Reportes', description: 'Panel de reportes y exportaciones.' },
+      { src: planillaImage('220546'), alt: 'Dashboard métricas', title: 'Métricas y resumen', description: 'Indicadores del tenant.' },
+      { src: planillaImage('220549'), alt: 'Configuración', title: 'Configuración', description: 'Parámetros del sistema de nómina.' },
+      { src: planillaImage('220555'), alt: 'Auditoría', title: 'Auditoría', description: 'Historial y trazabilidad de cambios.' },
+      { src: planillaImage('220732'), alt: 'Pantalla Planilla', title: 'Planilla', description: 'Vista principal de procesamiento de nómina.' },
+      { src: planillaImage('220756'), alt: 'Pantalla Planilla 2', title: 'Procesamiento de nómina', description: 'Flujo de cálculo y aprobación.' },
+      { src: planillaImage('220812'), alt: 'Pantalla Planilla 3', title: 'Resumen de nómina', description: 'Resumen antes de marcar como pagado.' },
+      { src: planillaImage('220848'), alt: 'Pantalla Planilla 4', title: 'Nómina pagada', description: 'Estado final Pagado y comprobantes.' },
+    ],
+    readmeContent: `Planilla — SaaS de Nómina para Panamá. Sistema de nómina empresarial multi-tenant para empresas en Panamá, con cumplimiento de la Ley 462 (CSS), Seguro Educativo, ISR y regulaciones laborales locales.
+
+**Qué hace:**
+- Multi-tenant: varias empresas en una sola instancia, con aislamiento de datos por tenant.
+- Nómina: cálculo de planilla (CSS, SE, ISR, riesgo profesional), horas extra, adelantos, vacaciones y flujo Draft → Calculado → Aprobado → Pagado.
+- Empleados: CRUD, departamentos, cargos, historial salarial y auditoría.
+- Suscripciones: planes Free / Starter / Professional / Enterprise con Stripe (pagos, webhooks, portal de facturación).
+- Roles: Owner, Admin, Manager, Accountant, Employee con permisos por rol.
+- Reportes: comprobantes de pago, reportes CSS, declaraciones ISR y exportación Excel/PDF según plan.
+
+**Stack:**
+- Backend: .NET 9, ASP.NET Core Web API, Entity Framework Core, ASP.NET Core Identity + JWT.
+- Frontend: React 19, Vite, Tailwind CSS, Lucide Icons, Recharts.
+- Base de datos: PostgreSQL 16+.
+- Pagos: Stripe (suscripciones y facturación).
+- Arquitectura: Clean Architecture (Domain / Application / Infrastructure / Web).
+- Deploy: Docker, CapRover, DigitalOcean.
+
+**Destacado técnico:**
+- Filtrado por TenantId en todas las consultas y verificación de límites por plan antes de crear recursos.
+- JWT con claims tenant_id, tenant_role y plan; middleware de tenant en cada request.
+- API REST documentada, DTOs en lugar de entidades expuestas y respuestas tipadas (ActionResponse<T>).`,
+  },
   {
     id: 'clau-formulario-freelance',
     title: 'Formulario CLAU - Trabajo Freelance',
@@ -216,29 +311,6 @@ export const projects: Project[] = [
 - Static file caching`,
   },
 
-  {
-    id: 'sistema-planilla',
-    title: 'Vorluno Planilla - Sistema de Nómina',
-    description: 'Sistema integral de gestión de nómina empresarial',
-    longDescription:
-      'Sistema completo para gestión de nómina con arquitectura limpia, procesamiento de pagos, reportes y administración de empleados. Implementa CQRS y Clean Architecture para máxima mantenibilidad.',
-    technologies: ['.NET', 'SQL Server', 'Clean Architecture', 'CQRS', 'Entity Framework'],
-    image: '/images/projects/planilla/project-planilla-banner.png',
-    github: 'https://github.com/vorluno/Vorluno-Planilla',
-    category: 'backend',
-    featured: true,
-    isFreelance: false,
-    features: [
-      '💼 Gestión de empleados completa',
-      '💰 Procesamiento de nómina automatizado',
-      '📊 Reportes y analytics detallados',
-      '🏗️ Clean Architecture para mantenibilidad',
-      '⚡ CQRS para separación de comandos y queries',
-      '🔒 Entity Framework con migraciones',
-      '📈 SQL Server para almacenamiento robusto',
-    ],
-    readmeContent: `Sistema integral de gestión de nómina empresarial con Clean Architecture y CQRS. Incluye procesamiento automatizado de pagos, reportes detallados y administración completa de empleados.`,
-  },
 ];
 
 // Exportar proyectos separados por tipo

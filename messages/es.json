@@ -62,6 +62,14 @@
       "error": "Error al enviar"
     }
   },
+  "universe": {
+    "title": "Mi Universo",
+    "subtitle": "Las cosas que me hacen ser yo",
+    "anime": { "title": "Anime & Manga" },
+    "series": { "title": "Series" },
+    "music": { "title": "Música" },
+    "gaming": { "title": "Gaming" }
+  },
   "footer": {
     "rights": "Todos los derechos reservados",
     "built": "Construido con Next.js y Tailwind CSS"
