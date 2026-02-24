@@ -9,6 +9,7 @@ import { socialLinks } from '@/lib/data/social';
 import { motion } from 'framer-motion';
 import { staggerContainer, fadeInUp } from '@/lib/utils/animations';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { AnimatePresence } from 'framer-motion';
 
 const inputClass = [
   'w-full px-4 py-2.5 font-mono text-sm',
@@ -32,6 +33,7 @@ export default function Contact() {
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [toastVisible, setToastVisible] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,6 +59,8 @@ export default function Contact() {
       setStatus('error');
     } finally {
       setIsSubmitting(false);
+      setToastVisible(true);
+      setTimeout(() => setToastVisible(false), 4000);
     }
   };
 
@@ -171,16 +175,6 @@ export default function Contact() {
                   {isSubmitting ? t('form.sending') : t('form.send')}
                 </Button>
 
-                {status === 'success' && (
-                  <p className="font-mono text-xs text-green-400/90 text-center">
-                    ✓ {t('form.success')}
-                  </p>
-                )}
-                {status === 'error' && (
-                  <p className="font-mono text-xs text-red-400/90 text-center">
-                    ✗ {t('form.error')}
-                  </p>
-                )}
               </form>
             </motion.div>
 
@@ -252,6 +246,30 @@ export default function Contact() {
           </div>
         </motion.div>
       </div>
+
+      {/* Toast flotante */}
+      <AnimatePresence>
+        {toastVisible && (
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 24 }}
+            transition={{ duration: 0.25 }}
+            className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 px-5 py-3 font-mono text-xs flex items-center gap-2"
+            style={{
+              background: status === 'success' ? 'rgba(2,8,23,0.96)' : 'rgba(2,8,23,0.96)',
+              border: `1px solid ${status === 'success' ? 'rgba(34,197,94,0.5)' : 'rgba(239,68,68,0.5)'}`,
+              boxShadow: status === 'success'
+                ? '0 0 20px rgba(34,197,94,0.15)'
+                : '0 0 20px rgba(239,68,68,0.15)',
+              color: status === 'success' ? '#86efac' : '#fca5a5',
+            }}
+          >
+            <span>{status === 'success' ? '✓' : '✗'}</span>
+            <span>{status === 'success' ? t('form.success') : t('form.error')}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </SectionWrapper>
   );
 }

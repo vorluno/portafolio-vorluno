@@ -10,10 +10,19 @@ import GeometricDecor from '@/components/ui/GeometricDecor';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils/animations';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { HiDocumentText } from 'react-icons/hi';
+import { useLocale } from 'next-intl';
 
 export default function Hero() {
   const t = useTranslations('hero');
+  const locale = useLocale();
   const TYPEWRITER_TEXTS = t.raw('typewriter') as string[];
+
+  const cvHref = locale === 'es'
+    ? '/images/estudios/CV_Jos%C3%A9Gonz%C3%A1lez_2026.pdf'
+    : '/images/estudios/CV_JoseGonzalez_EN.pdf';
+  const cvName = locale === 'es'
+    ? 'CV_JoséGonzález_2026.pdf'
+    : 'CV_JoseGonzalez_EN.pdf';
 
   return (
     <section
@@ -153,6 +162,12 @@ export default function Hero() {
               >
                 {t('cta.projects')}
               </Button>
+              <a href={cvHref} download={cvName}>
+                <Button variant="outline" size="lg">
+                  <HiDocumentText className="inline mr-1.5 text-base" />
+                  {t('cta.cv')}
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
 
