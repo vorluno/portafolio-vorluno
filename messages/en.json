@@ -2,6 +2,7 @@
   "nav": {
     "home": "Home",
     "about": "About",
+    "experience": "Experience",
     "projects": "Projects",
     "certifications": "Certifications",
     "skills": "Skills",
@@ -26,6 +27,42 @@
     "intro": "My focus is on writing clean, maintainable and scalable code, applying industry best practices such as Clean Architecture and CQRS.",
     "passion": "I'm passionate about learning new technologies and applying them in real projects that generate value. From modern web applications to robust backend systems, I enjoy every stage of development.",
     "approach": "I work on both freelance and personal projects, always seeking to exceed client expectations and deliver high-quality solutions that truly solve problems."
+  },
+  "experience": {
+    "title": "Experience & Education",
+    "subtitle": "My professional journey and academic background",
+    "work": {
+      "title": "Work Experience"
+    },
+    "education": {
+      "title": "Academic Background"
+    },
+    "current": "Current",
+    "ongoing": "Ongoing",
+    "bullets": {
+      "ancer_b1": "Development and maintenance of modules in Core360 ERP, a multi-module enterprise system.",
+      "ancer_b2": "Implementation of backend features with .NET and C#, integrating complex business logic.",
+      "ancer_b3": "Remote collaboration in an agile team, participating in code reviews and iterative deliveries.",
+      "clauKyc_b1": "Development of the CLAU KYC system for digitizing and managing compliance processes.",
+      "clauKyc_b2": "Full-stack architecture with ASP.NET Core 9 backend and React 18 + Vite frontend.",
+      "clauKyc_b3": "Containerized deployment with Docker and CapRover, plus transactional email integration via Brevo.",
+      "clauContable_b1": "Support in accounting processes and review of financial statements for firm clients.",
+      "clauContable_b2": "Technical assistance with equipment, software, and team productivity tools.",
+      "clauContable_b3": "Management and organization of digital documents and client databases."
+    },
+    "degrees": {
+      "umecit_degree": "Bachelor's in Programming Systems",
+      "iced_degree": "Science High School Diploma, Computer Science Track"
+    },
+    "courses": {
+      "title": "Courses & Certifications",
+      "hours": "hours",
+      "inadeh_fundamentos": "Programming Fundamentals",
+      "inadeh_calcBasica": "Basic Spreadsheet",
+      "inadeh_calcIntermedio": "Intermediate Spreadsheet",
+      "udemy_csharpPoo": "Complete C# OOP Course with .NET",
+      "google_ai": "Google AI Professional Certificate"
+    }
   },
   "projects": {
     "title": "Projects",

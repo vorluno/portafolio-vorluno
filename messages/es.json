@@ -2,6 +2,7 @@
   "nav": {
     "home": "Inicio",
     "about": "Acerca",
+    "experience": "Experiencia",
     "projects": "Proyectos",
     "certifications": "Certificaciones",
     "skills": "Habilidades",
@@ -26,6 +27,42 @@
     "intro": "Mi enfoque se centra en escribir código limpio, mantenible y escalable, aplicando las mejores prácticas de la industria como Clean Architecture y CQRS.",
     "passion": "Me apasiona aprender nuevas tecnologías y aplicarlas en proyectos reales que generen valor. Desde aplicaciones web modernas hasta sistemas backend robustos, disfruto cada etapa del desarrollo.",
     "approach": "Trabajo tanto en proyectos freelance como personales, siempre buscando superar las expectativas del cliente y entregar soluciones de alta calidad que realmente resuelvan problemas."
+  },
+  "experience": {
+    "title": "Experiencia & Educación",
+    "subtitle": "Mi trayectoria profesional y formación académica",
+    "work": {
+      "title": "Experiencia Laboral"
+    },
+    "education": {
+      "title": "Formación Académica"
+    },
+    "current": "Actual",
+    "ongoing": "En curso",
+    "bullets": {
+      "ancer_b1": "Desarrollo y mantenimiento de módulos en Core360 ERP, sistema empresarial multi-módulo.",
+      "ancer_b2": "Implementación de funcionalidades backend con .NET y C#, integrando lógica de negocio compleja.",
+      "ancer_b3": "Colaboración remota en equipo ágil, participando en revisiones de código y entregas iterativas.",
+      "clauKyc_b1": "Desarrollo del sistema CLAU KYC para digitalización y gestión de procesos de cumplimiento.",
+      "clauKyc_b2": "Arquitectura full-stack con ASP.NET Core 9 backend y React 18 + Vite frontend.",
+      "clauKyc_b3": "Despliegue en contenedores Docker con CapRover e integración de email transaccional vía Brevo.",
+      "clauContable_b1": "Soporte en procesos contables y revisión de estados financieros para clientes de la firma.",
+      "clauContable_b2": "Asistencia técnica en equipos, software y herramientas de productividad del equipo.",
+      "clauContable_b3": "Gestión y organización de documentos digitales y bases de datos de clientes."
+    },
+    "degrees": {
+      "umecit_degree": "Licenciatura en Sistemas de Programación",
+      "iced_degree": "Bachiller en Ciencias, Orientación Informática"
+    },
+    "courses": {
+      "title": "Cursos & Certificaciones",
+      "hours": "horas",
+      "inadeh_fundamentos": "Fundamentos de Programación",
+      "inadeh_calcBasica": "Hoja de Cálculo Básica",
+      "inadeh_calcIntermedio": "Hoja de Cálculo Intermedio",
+      "udemy_csharpPoo": "C# Curso Completo de POO con .NET",
+      "google_ai": "Certificado Profesional de Google AI"
+    }
   },
   "projects": {
     "title": "Proyectos",
