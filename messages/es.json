@@ -12,7 +12,13 @@
     "greeting": "Hola, soy",
     "name": "José",
     "title": "Desarrollador Full Stack",
-    "typewriter": ["Desarrollador Full Stack", "Escritor", "Melómano", "Gamer", "Otaku"],
+    "typewriter": [
+      "Desarrollador Full Stack",
+      "Escritor",
+      "Melómano",
+      "Gamer",
+      "Otaku"
+    ],
     "subtitle": "Creando experiencias digitales excepcionales con tecnologías modernas",
     "available": "Disponible para proyectos",
     "cta": {
@@ -62,7 +68,8 @@
       "inadeh_calcBasica": "Hoja de Cálculo Básica",
       "inadeh_calcIntermedio": "Hoja de Cálculo Intermedio",
       "udemy_csharpPoo": "C# Curso Completo de POO con .NET",
-      "google_ai": "Certificado Profesional de Google AI"
+      "google_ai": "Certificado Profesional de Google AI",
+      "google_aiAppBuilding": "IA para el Desarrollo de Apps"
     }
   },
   "projects": {
@@ -91,7 +98,9 @@
       "fundamentals": "Fundamentos de Programación",
       "spreadsheetBasic": "Hoja de Cálculo Básica",
       "spreadsheetMid": "Hoja de Cálculo Intermedio",
-      "diploma": "Diploma"
+      "diploma": "Diploma",
+      "googleAIProfessional": "Certificado Profesional Google AI",
+      "aiForAppBuilding": "IA para el Desarrollo de Apps"
     }
   },
   "skills": {

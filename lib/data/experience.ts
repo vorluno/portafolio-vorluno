@@ -89,9 +89,14 @@ export const courseEntries: Course[] = [
   {
     id: 'google-ai',
     titleKey: 'google_ai',
-    institution: 'Google',
-    date: '2026 – Presente',
-    ongoing: true,
+    institution: 'Google / Coursera',
+    date: 'Feb 2026',
+  },
+  {
+    id: 'google-ai-app-building',
+    titleKey: 'google_aiAppBuilding',
+    institution: 'Google / Coursera',
+    date: 'Feb 2026',
   },
 ];
 

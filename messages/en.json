@@ -12,7 +12,13 @@
     "greeting": "Hi, I'm",
     "name": "José",
     "title": "Full Stack Developer",
-    "typewriter": ["Full Stack Developer", "Writer", "Music Lover", "Gamer", "Otaku"],
+    "typewriter": [
+      "Full Stack Developer",
+      "Writer",
+      "Music Lover",
+      "Gamer",
+      "Otaku"
+    ],
     "subtitle": "Creating exceptional digital experiences with modern technologies",
     "available": "Available for projects",
     "cta": {
@@ -62,7 +68,8 @@
       "inadeh_calcBasica": "Basic Spreadsheet",
       "inadeh_calcIntermedio": "Intermediate Spreadsheet",
       "udemy_csharpPoo": "Complete C# OOP Course with .NET",
-      "google_ai": "Google AI Professional Certificate"
+      "google_ai": "Google AI Professional Certificate",
+      "google_aiAppBuilding": "AI for App Building"
     }
   },
   "projects": {
@@ -91,7 +98,9 @@
       "fundamentals": "Programming Fundamentals",
       "spreadsheetBasic": "Basic Spreadsheet",
       "spreadsheetMid": "Intermediate Spreadsheet",
-      "diploma": "Diploma"
+      "diploma": "Diploma",
+      "googleAIProfessional": "Google AI Professional Certificate",
+      "aiForAppBuilding": "AI for App Building"
     }
   },
   "skills": {

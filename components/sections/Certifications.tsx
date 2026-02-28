@@ -29,6 +29,18 @@ const CERT_DATA = [
     file: '/images/estudios/DIPLOMA.pdf',
     preview: '/images/estudios/preview-diploma.png',
   },
+  {
+    key: 'googleAIProfessional',
+    file: '/images/estudios/Coursera RHUGH0D1ZAPN.pdf',
+    preview: '/images/estudios/preview-google-ai-professional.png',
+    issuerOverride: 'Google / Coursera',
+  },
+  {
+    key: 'aiForAppBuilding',
+    file: '/images/estudios/Coursera TVKAZUXURA2T.pdf',
+    preview: '/images/estudios/preview-ai-for-app-building.png',
+    issuerOverride: 'Google / Coursera',
+  },
 ];
 
 export default function Certifications() {
@@ -38,7 +50,7 @@ export default function Certifications() {
   const certifications = CERT_DATA.map((c) => ({
     ...c,
     name: t(`items.${c.key}`),
-    issuer: t('issuer'),
+    issuer: c.issuerOverride ?? t('issuer'),
   }));
 
   const duplicated = [...certifications, ...certifications];
