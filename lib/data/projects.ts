@@ -24,7 +24,7 @@ export const projects: Project[] = [
       'Docker',
       'CapRover',
     ],
-    image: planillaImage('215934'),
+    image: '/images/projects/planilla/project-planilla-banner.png',
     github: 'https://github.com/vorluno/Vorluno-Planilla',
     demo: 'https://pagly.clau.com.pa/',
     category: 'fullstack',

@@ -55,3 +55,10 @@ i18n.ts
 
 # Claude
 .claude/
+
+# Cursor IDE
+.cursor/
+
+# Scripts con credenciales hardcodeadas
+activate-latest-version.js
+get-app-status.js
